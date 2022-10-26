@@ -5,8 +5,6 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-"""
-# Welcome to Streamlit1!
 
 def highlight_max(x, color):
    return np.where(x == np.nanmax(x.to_numpy()), f"color: {color};", None)
@@ -14,7 +12,12 @@ def highlight_max(x, color):
 df = pd.DataFrame(np.random.randn(5, 2), columns=["A", "B"])
 df.style.apply(highlight_max, color='red')  
 df.style.apply(highlight_max, color='blue', axis=1)  
-st.dataframe(df.style.apply(highlight_max, color='green', axis=None))  
+st.dataframe(df.style.apply(highlight_max, color='green', axis=None)) 
+df
+
+"""
+# Welcome to Streamlit1!
+
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
