@@ -5,6 +5,13 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
+midx = pd.MultiIndex.from_product([['ix', 'jy'], [0, 1], ['x3', 'z4']])
+df = pd.DataFrame([np.arange(8)], columns=midx)
+def highlight_x(s):
+    return ["opacity: 0.1;" if "x" in v else "" for v in s]
+df.style.apply_index(highlight_x, axis="columns", level=[0, 2])
+"-----"
+df.dataframe(df.style.apply_index(highlight_x, axis="columns", level=[0, 2]))
 
 def highlight_max(x, color):
    return np.where(x == np.nanmax(x.to_numpy()), f"color: {color};", None)
