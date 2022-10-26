@@ -14,7 +14,7 @@ def highlight_max(x, color):
 df = pd.DataFrame(np.random.randn(5, 2), columns=["A", "B"])
 df.style.apply(highlight_max, color='red')  
 df.style.apply(highlight_max, color='blue', axis=1)  
-df.style.apply(highlight_max, color='green', axis=None)  
+st.dataframe(df.style.apply(highlight_max, color='green', axis=None))  
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
