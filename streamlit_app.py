@@ -10,8 +10,7 @@ df = pd.DataFrame([np.arange(8)], columns=midx)
 def highlight_x(s):
     return ["opacity: 0.1;" if "x" in v else "" for v in s]
 df.style.apply_index(highlight_x, axis="columns", level=[0, 2])
-"-----"
-df.dataframe(df.style.apply_index(highlight_x, axis="columns", level=[0, 2]))
+st.dataframe(df.style.apply_index(highlight_x, axis="columns", level=[0, 2]))
 
 def highlight_max(x, color):
    return np.where(x == np.nanmax(x.to_numpy()), f"color: {color};", None)
